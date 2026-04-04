@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-# Installs and configures nginx to listen on port 80 and return a page with "Holberton School"
-apt-get update -y
-apt-get install -y nginx
-echo "Holberton School" > /var/www/html/index.html
-service nginx start
+# Installs nginx server
+
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Holberton School" | sudo tee /var/www/html/index.html > /dev/null
+sudo service nginx start
